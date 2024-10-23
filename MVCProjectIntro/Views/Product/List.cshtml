@@ -1,0 +1,41 @@
+﻿@model List<Product>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    List<string> productList = new List<string>();
+    productList.Add("");
+
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @item.Name @item.Price
+            </li>
+        }
+    </ul>
+
+    <table border="1">
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Ürün Fiyatı</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Price
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+
+}
