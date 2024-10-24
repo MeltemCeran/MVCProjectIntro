@@ -6,36 +6,38 @@
     List<string> productList = new List<string>();
     productList.Add("");
 
-    <ul>
+    <ol class="list-group list-group-numbered">
         @foreach (var item in Model)
         {
-            <li>
-                @item.Name @item.Price
-            </li>
+            <li class="list-group-item"> @item.Name @item.Price</li>
         }
-    </ul>
+    </ol>
 
-    <table border="1">
-        <tr>
-            <th>Ürün Adı</th>
-            <th>Ürün Fiyatı</th>
-        </tr>
-        @foreach (var item in Model)
-        {
+
+    <table class="table">
+        <thead>
             <tr>
-
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.Price
-                </td>
-
-
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
             </tr>
-        }
-
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
-
-
 }
+
+<a class="btn btn-success" role="button" asp-controller="Product" asp-action="List">List All Products</a>
+<a class="btn btn-success" role="button" asp-controller="Product" asp-action="Add">Add Product</a>

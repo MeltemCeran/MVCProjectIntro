@@ -21,5 +21,18 @@ namespace MVCProjectIntro.Controllers
         {
             return View(products);
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(Product product)
+        {
+            product.Id = products.Count +1;
+            products.Add(product);
+            return RedirectToAction("List");
+        }
     }
 }
