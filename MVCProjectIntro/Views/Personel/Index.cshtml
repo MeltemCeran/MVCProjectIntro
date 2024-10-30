@@ -3,17 +3,31 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    <ol class="list-group list-group-numbered">
-        @foreach (var item in Model)
-        {
-            <li class="list-group-item"> @item.Name @item.Surname</li>
-        }
-    </ol>
-    <br/>
-    <input type="submit" class="btn btn-info" value="Update" />
-    <input type="submit" class="btn btn-warning" value="Delete" />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var personel in Model)
+            {
+                <tr>
+                    <td>@personel.Id</td>
+                    <td>@personel.Name</td>
+                    <td>@personel.Surname</td>
+                    <td><a class="btn btn-warning" role="button" asp-action="Remove" asp-route-id="@personel.Id">Delete</a></td>
+                    <td><a class="btn btn-secondary" role="button" asp-action="Update" asp-route-id="@personel.Id">Update</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
     <br/>
     <hr/>
-
-     <a class="btn btn-primary" role="button" asp-controller="Personel" asp-action="PersonelAdd">Add Personel</a>
+    <a class="btn btn-primary" role="button" asp-controller="Personel" asp-action="PersonelAdd">Add Personel</a>
 }

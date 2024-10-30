@@ -11,7 +11,7 @@ namespace MVCProjectIntro.Controllers
             new Personel {Id= 1 ,Name = "Meltem", Surname="Ceran" },
             new Personel {Id= 2 ,Name = "Alkın", Surname="Bayrak" },
             new Personel {Id= 3 ,Name = "Batuhan", Surname="Özbakır" },
-
+            new Personel {Id= 4 ,Name = "Efnan", Surname="Genç" }
         };
         public IActionResult Index()
         {
